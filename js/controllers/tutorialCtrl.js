@@ -1,7 +1,23 @@
 /**
  * 
  */
-var tutCtrl= angular.module('tutorialCtrlModule', []);
+angular.module('tutorialCtrlModule', [])
 
-tutCtrl.controller();
-tutCtrl.service();
+.controller("TutorialCtrl",["$scope",function($scope){
+	
+	$scope.name="Stelios";
+	
+}])
+
+
+.controller("TutorialCtrl1",["$scope",function($scope){
+	
+	$scope.name1="Stelios1";
+	
+}])
+;
+	
+	
+
+
+
