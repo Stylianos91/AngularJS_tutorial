@@ -3,12 +3,28 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Angular tutorial</title>
-bla bla
 <script src="lib/angular.min.js"></script>
 <script src="js/app.js"></script>
 <script src="js/controllers/tutorialCtrl.js"></script>
 </head>
-<body>
+<body ng-controller="TutorialCtrl">
+<hr />
+
+<h1>{{tutorialObject.title}}</h1>
+<h2>{{tutorialObject.subtitle}}</h2>
+
+
+<p> Number: {{2+2}}</p>
+<p> String {{tutorialObject.firstName + " " + tutorialObject.lastName}}</p>
+<p><b>Binding: {{tutorialObject.bindOutout}}</b></p>
+
+<label>First Name </label>
+<input ng-model="tutorialObject.firstName">
+<br/>
+<label>Last Name </label>
+<input ng-model="tutorialObject.lastName">
+<br/>
+<button ng-click="timesTwo()">Multiply</button>
 
 </body>
 </html>
