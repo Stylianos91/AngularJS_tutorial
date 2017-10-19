@@ -16,13 +16,15 @@
 
 <p> Number: {{2+2}}</p>
 <p> String {{tutorialObject.firstName + " " + tutorialObject.lastName}}</p>
-<p><b>Binding: {{tutorialObject.bindOutout}}</b></p>
+<p><b>Binding: {{tutorialObject.bindOutout |currency:"DRX "}}</b></p>
 
 <label>First Name </label>
-<input ng-model="tutorialObject.firstName">
+<input ng-model="tutorialObject.firstName | uppercase">
 <br/>
 <label>Last Name </label>
-<input ng-model="tutorialObject.lastName">
+<input ng-model="tutorialObject.lastName |lowercase">
+<welcome-message></welcome-message>
+
 <br/>
 <button ng-click="timesTwo()">Multiply</button>
 
