@@ -27,14 +27,14 @@ angular.module('tutorialCtrlModule', [])
 	
 })
 
-.controller("TutorialCtrl1",["$scope",function($scope){
+.controller("TutorialCtrl2",["$scope",function($scope){
 	
-	$scope.name1="Stelios1";
+	$scope.secondTutorial="This is the second tutorial";
 	
 }])
 
 
-.factory("Calculations", function() {
+/*.factory("Calculations", function() {
 	var calculations={};
 	calculations.times2= function (a) {
 		return a*2;
@@ -49,7 +49,7 @@ angular.module('tutorialCtrlModule', [])
 	
 	return calculations
 	
-})
+})*/
 ;
 	
 	

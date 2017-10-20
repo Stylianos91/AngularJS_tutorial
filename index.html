@@ -2,18 +2,21 @@
 <html ng-app="tutorialApp">
 <head>
 <meta charset="ISO-8859-1">
-<title>Angular tutorial</title>
-<script src="lib/angular.min.js"></script>
+<title>Angular tutorial</title> t>
 <script src="js/app.js"></script>
 <script src="js/controllers/tutorialCtrl.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 </head>
-<body ng-controller="TutorialCtrl">
-<hr />
+<body>
 
-<h1>{{tutorialObject.title}}</h1>
-<h2>{{tutorialObject.subtitle}}</h2>
-
-
+	<div ng-view></div>
+</body>
+<!-- <body ng-controller="TutorialCtrl">
+<div >
 <p> Number: {{2+2}}</p>
 <p> String {{tutorialObject.firstName + " " + tutorialObject.lastName}}</p>
 <p><b>Binding: {{tutorialObject.bindOutout |currency:"DRX "}}</b></p>
@@ -28,5 +31,7 @@
 <br/>
 <button ng-click="timesTwo()">Multiply</button>
 
-</body>
+<br />
+</div>
+</body> -->
 </html>
