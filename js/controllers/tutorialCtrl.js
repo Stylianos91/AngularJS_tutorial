@@ -16,8 +16,52 @@ angular.module('tutorialCtrlModule', [])
 	
 	$scope.timesTwo = function () {
 		$scope.tutorialObject.bindOutout = Calculations.times2($scope.tutorialObject.bindOutout);
-	}
-	Calculations.pythagorio()
+	};
+
+	$scope.reset_0 = function () {
+    $scope.tutorialObject.bindOutout=2;
+
+  };
+
+$scope.showAlert = function () {
+  alert("reset occurred!!");
+};
+
+
+//
+//   $scope.delayClick = function () {
+//     $scope.sleep(500);
+//     //  alert("this is the delayed alert");
+//   };
+//
+//   $scope.onDblClickRow = function (row) {
+//
+//     $scope.openReport(row.entity);
+//   };
+//
+//
+//   $scope.sleep = function (milliseconds) {
+//     var start = new Date().getTime();
+//     for (var i = 0; i < 1e7; i++) {
+//       if ((new Date().getTime() - start) > milliseconds){
+//         break;
+//       }
+//     }
+//   };
+//
+// //-----------------------------------------------------------------------------------------
+//   rowTemplate: '<div  '
+//   + 'ng-dblclick="grid.appScope.onDblClickRow(row)" '
+//   + 'ng-click="grid.appScope.delayClick()" '
+//   + 'ng-class="{ \'tape\':row.entity.status == \'OFFLINE\' }"> '
+//   + '<div ng-repeat="(colRenderIndex, col) in colContainer.renderedColumns track by col.uid" '
+//   + 'class="ui-grid-cell" ng-class="{ \'ui-grid-row-header-cell\': col.isRowHeader }" '
+//   + ' ui-grid-cell></div>'
+//   + '</div>',
+// //------------------------------------------------------------------------------------------
+//
+
+  //Calculations.pythagorio()
 }])
 .directive("welcomeMessage", function () {
 	return {
@@ -36,6 +80,7 @@ angular.module('tutorialCtrlModule', [])
 
 .factory("Calculations", function() {
 	var calculations={};
+
 	calculations.times2= function (a) {
 		return a*2;
 		
@@ -45,7 +90,7 @@ angular.module('tutorialCtrlModule', [])
 	calculations.pythagorio= function(a,b) {
 		return (a*a)+(b*b);
 		
-	}
+	};
 	
 	return calculations
 	
