@@ -13,6 +13,10 @@ angular.module('tutorialCtrlModule', [])
 	
 	$scope.tutorialObject.firstName="Stelios";
 	$scope.tutorialObject.lastName="Manousakis";
+
+
+
+	$scope.tutorialObject.sgCount = 0;
 	
 	$scope.timesTwo = function () {
 		$scope.tutorialObject.bindOutout = Calculations.times2($scope.tutorialObject.bindOutout);
@@ -23,8 +27,10 @@ angular.module('tutorialCtrlModule', [])
 
   };
 
-$scope.showAlert = function () {
-  alert("reset occurred!!");
+	$scope.showAlert = function () {
+ // alert("reset occurred!!");
+		$scope.sleep(500);
+		$scope.tutorialObject.sgCount =	$scope.tutorialObject.sgCount +1;	
 };
 
 
@@ -40,14 +46,14 @@ $scope.showAlert = function () {
 //   };
 //
 //
-//   $scope.sleep = function (milliseconds) {
-//     var start = new Date().getTime();
-//     for (var i = 0; i < 1e7; i++) {
-//       if ((new Date().getTime() - start) > milliseconds){
-//         break;
-//       }
-//     }
-//   };
+  $scope.sleep = function (milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  };
 //
 // //-----------------------------------------------------------------------------------------
 //   rowTemplate: '<div  '

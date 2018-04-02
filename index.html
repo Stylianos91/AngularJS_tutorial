@@ -24,12 +24,15 @@
 <label>Last Name </label>
 <input ng-model="tutorialObject.lastName">
 <welcome-message></welcome-message>
-
+<!-- make dblclick override ondclick -->
 <br/>
 <button ng-click="timesTwo()">Multiply</button>
 <br/>
 <button ng-click="reset_0()" >Reset</button>
 <br/>
-<label ng-dblclick="showAlert">Double Click to show alert</label>
+<h1 ng-dblclick="dbcount = dbcount + 1" ng-click="sccount = showAlert()" ng-init="dbcount=0" >Double_Click</h1>
+<br/>
+<p>Double count {{dbcount}}</p>
+<p>Single count {{tutorialObject.sgCount}}</p>
 </body>
 </html>
