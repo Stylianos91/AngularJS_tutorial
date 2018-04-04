@@ -34,18 +34,49 @@ angular.module('tutorialCtrlModule', [])
 };
 
 
-//
-//   $scope.delayClick = function () {
-//     $scope.sleep(500);
-//     //  alert("this is the delayed alert");
-//   };
-//
-//   $scope.onDblClickRow = function (row) {
-//
-//     $scope.openReport(row.entity);
-//   };
-//
-//
+  /////////////////////////////////////////////
+  var isItDouble = false;
+  var timeStart = 0;
+  const timespan = 400;
+  var upRow = 0;
+  var elementCompare= 0;
+  var firstDown = 0;
+
+  $scope.mouseReleased = function ($event, row) {
+    upRow = row;
+    console.log("Mouse Up!!!");
+    isItDouble = true;
+    timeStart = new Date().getTime();
+    elementCompare = $event.currentTarget;
+    console.log("MouseUp element "+ elementCompare);
+    $scope.sleep(200);
+    console.log(upRow);
+  };
+
+  $scope.mousePressed = function ($event, row) {
+    var timeStop = new Date().getTime();
+    console.log("MouseDown element "+ $event.currentTarget);
+    var firstTime = 0;
+    if (isItDouble === false) {
+      firstTime = row;
+      console.log("first press "+ firstTime);
+    }
+
+
+    if (isItDouble === true && (timeStop-timeStart) < timespan && (row === upRow)){
+      //  row.e
+      // console.log("Time Stert "+ timeStart);
+      // console.log("Time Stop " + timeStop);
+      console.log("Double Click!!!");
+      //  gridApi.selection.on.rowSelectionChanged($scope, $scope.selectionHandler);
+      $scope.openReport(row.entity);
+      isItDouble = false;
+    }
+  };
+// + 'ng-dblclick="grid.appScope.onDblClickRow(row)" '
+
+
+  /////////////////////////////////////////////////
   $scope.sleep = function (milliseconds) {
     var start = new Date().getTime();
     for (var i = 0; i < 1e7; i++) {
@@ -64,6 +95,9 @@ angular.module('tutorialCtrlModule', [])
 //   + 'class="ui-grid-cell" ng-class="{ \'ui-grid-row-header-cell\': col.isRowHeader }" '
 //   + ' ui-grid-cell></div>'
 //   + '</div>',
+
+//   + 'ng-mouseup="grid.appScope.mouseReleased($event, row)"
+//   + 'ng-mousedown="grid.appScope.mousePressed($event, row)" '
 // //------------------------------------------------------------------------------------------
 //
 
